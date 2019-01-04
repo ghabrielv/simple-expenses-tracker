@@ -1,0 +1,4 @@
+<span class="pull-left">${{expense.amount | number:2 }}</span>{{expense.description}}
+        
+<button type="button" class="btn btn-danger btn-s pull-right btn-separation-left" ng-click="remove(expense)"><span class="glyphicon glyphicon-trash"> </span></button>        
+<a href="#expense/edit/{{expense.id}}" class="btn btn-primary btn-s pull-right"><span class="glyphicon glyphicon-pencil"></span></a>

@@ -1,0 +1,26 @@
+<html ng-app="expensesApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">    
+    <title>Simple Expenses Tracker</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <span class="navbar-brand"><img src="img/logo.png" class="brand" height="20" /> Simple Expenses Tracker</span>
+        </div>
+      </div>
+    </nav>
+    <div class="container" ng-view>      
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
