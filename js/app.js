@@ -65,7 +65,7 @@ app.factory('Expenses', function ($http) {
     service.save = function (entry) {
         var toUpdate = service.getById(entry.id);
         if (toUpdate) {
-            $http.patch('data/update.json', entry).success(function (data) {
+            $http.post('data/update.json', entry).success(function (data) {
                 if (data.success) {
                     _.extend(toUpdate, entry);
                 }
@@ -73,7 +73,7 @@ app.factory('Expenses', function ($http) {
                 console.log('Status: ' + status + ' Data: ' + data);
             });
         } else {
-            $http.patch('data/create.json', entry).success(function (data) {
+            $http.post('data/create.json', entry).success(function (data) {
                 entry.id = data.newId;
                 service.entries.push(entry);
             }).error(function (data, status) {
@@ -83,7 +83,7 @@ app.factory('Expenses', function ($http) {
     };
 
     service.remove = function (entry) {
-        $http.delete('data/delete.json', {id: entry.id}).success(function (data) {
+        $http.post('data/delete.json', {id: entry.id}).success(function (data) {
             if (data.success) {
                 service.entries = _.reject(service.entries, function (element) {
                     return element.id == entry.id
